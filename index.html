@@ -16,13 +16,14 @@
 
   <script>
     window.onerror = function(message, url, lineNum) {
+      console.log(111)
       var fileName = url.match(".+/(.+?)([\?#;].*)?$")[1];
       var message =  fileName + ":" + lineNum + " - "+ message + ",\n"
                    + "userAgent:" + window.navigator.userAgent;
 
       ga("send", "exception", { "exDescription": message });
-      console.log(message)
     };
+    console.log(120)
   </script>
 
 </body>
